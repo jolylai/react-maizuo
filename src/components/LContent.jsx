@@ -11,9 +11,9 @@ class LContent extends Component{
   }
   render(){
     return(
-      <div className="layout-content">
-        <Content className="content">content</Content>
-      </div>
+        <Content className="content">
+
+        </Content>
     )
   }
 }

@@ -24,7 +24,17 @@ class LFooter extends Component{
             <img src="../favicon.ico" alt="weibo"/>
           </div>
           <div className="copyright">
-            <span><a>关于卖座 |</a> <a>联系我们 |</a><a>商务合作 |</a><a>合作伙伴 |</a><a>诚聘英才 |</a><a>使用帮助 |</a><a>退票服务 |</a><a>服务条款 |</a> <a>社区管理</a></span>
+            <ul>
+              <li><a>关于卖座 |</a></li>
+              <li><a>联系我们 |</a></li>
+              <li><a>商务合作 |</a></li>
+              <li><a>合作伙伴 |</a></li>
+              <li><a>诚聘英才 |</a></li>
+              <li><a>使用帮助 |</a></li>
+              <li><a>退票服务 |</a></li>
+              <li><a>服务条款 |</a></li>
+              <li><a>社区管理 </a></li>
+            </ul>
             <span>Copyright © 2017 maizuo. All Rights Reserved 卖座网 版权所有 增值业务经营许可证:粤B2-200502318</span>
           </div>
         </Footer>

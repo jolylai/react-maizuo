@@ -1,21 +1,62 @@
-/* Base Application Styles */
-body {
-  color: #fff;
-  background: #222;
-}
+/* header */
+.header{
 
-.index img {
-  margin: 40px auto;
-  border-radius: 4px;
-  background: #fff;
-  display: block;
 }
+.header-menu{
+  width: 1200px;
+  margin: 0 auto;
+}
+.header .logo{
 
-.index .notice {
-  margin: 20px auto;
-  padding: 15px 0;
+}
+.header .city-picker{
+  margin-right: 30px;
+}
+.header .page{
+  margin-right: 60px;
+}
+.header .signIn-signUp{
+  margin-right: 60px;
+}
+/* content*/
+/* footer  start*/
+.footer{
   text-align: center;
-  border: 1px solid #000;
-  border-width: 1px 0;
-  background: #666;
+  height: 150px;
 }
+.footer h2,.server,.follow{
+  display: inline-block;
+  float: left;
+}
+.footer h2{
+  font-size: 18px;
+  margin-left: 300px;
+}
+.footer .server{
+  margin-left: 160px;
+}
+.footer .server .mobile{
+  font-size: 22px;
+  font-weight: bold;
+}
+.footer .follow{
+  margin-left: 220px;
+}
+.footer .copyright::before{
+  content: '';
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.footer .copyright li{
+  display: inline-block;
+  padding: 20px;
+}
+.footer .copyright li::after{
+  display: inline-block;
+  width: 11px;
+  height: 10px;
+  background: #EEEEEE;
+}
+/* footer  end*/
