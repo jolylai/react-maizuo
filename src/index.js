@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/Main';
 import store from './redux/stores/store.js'
-import router from './router/router.jsx'
+import router from './router/router.js'
 import { Provider } from 'react-redux'
 
 // Render the main component into the dom

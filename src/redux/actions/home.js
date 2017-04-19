@@ -3,7 +3,7 @@ import api from '../reducers/api'
 
 function getBannerList(res){
   return {
-    type: 'HOME_GET-BANNER_LIST',
+    type: 'HOME_GET_BANNER_LIST',
     date: res.data
   }
 }

@@ -8,6 +8,14 @@ import {bindActionCreators}  from 'redux'
 let _key = 0;
 
 class Home extends Component{
+  constructor(props,context){
+    super(props,context);
+  }
+  componentDidMount(){
+    this.props.action.fetchBanner(() => {
+      this.props.fetchNowPlaying()
+    })
+  }
   renderBanner(){
     const { banner } = this.props;
     if (banner.length == 0){
@@ -48,17 +56,16 @@ class Home extends Component{
 
 const mapStateToProps = (state) => {
   return {
-    banner: state.homeState.banner,
-    nowplay: state.homeState.nowplay,
-    coming: state.homeState.coming
+    banner:state.homeState.banner,
+    nowplay:state.homeState.nowplay,
+    coming:state.homeState.coming
   }
 }
 const mapDispatchToProps = (dispatch) => {
   return {
-    action: bindActionCreators(action,dispatch)
+    actions:bindActionCreators(actions,dispatch)
   }
 }
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Home);
+
+export default connect(mapStateToProps,mapDispatchToProps)(Home);
+

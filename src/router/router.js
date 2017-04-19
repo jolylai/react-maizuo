@@ -1,7 +1,6 @@
 import React,{ Component } from 'react'
-import {Router,Route,Redirect,IndexRoute,browserHistory,hashHistory} from 'react-router'
+import { Router,Route,Redirect,IndexRoute,browserHistory,hashHistory } from 'react-router'
 import Home from '../page/Home.jsx'
-import Layout from '../components/Layout.jsx'
 import Roots from '../components/Root.jsx'
 
 const history = process.env.NODE_ENV !== 'production' ? browserHistory : hashHistory;
