@@ -19,6 +19,17 @@
   margin-right: 60px;
 }
 /* content*/
+
+/* 导航栏 */
+.content{
+
+}
+.slick-trick{
+  height: 400px;
+  width: 100%;
+  background-image: url("https://pic.maizuo.com/manager/5a5d2507461a3290fa6ced2772f68430.png!/quality/60");
+  background-size: cover;
+}
 /* footer  start*/
 .footer{
   text-align: center;
@@ -60,3 +71,4 @@
   background: #EEEEEE;
 }
 /* footer  end*/
+
