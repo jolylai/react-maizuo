@@ -30,17 +30,17 @@
 }
 .footer h2{
   font-size: 18px;
-  margin-left: 300px;
+  margin-left: 160px;
 }
 .footer .server{
-  margin-left: 160px;
+  margin-left: 80px;
 }
 .footer .server .mobile{
   font-size: 22px;
   font-weight: bold;
 }
 .footer .follow{
-  margin-left: 220px;
+  margin-left: 80px;
 }
 .footer .copyright::before{
   content: '';
