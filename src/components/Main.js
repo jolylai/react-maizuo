@@ -2,13 +2,13 @@ require('normalize.css/normalize.css');
 require('styles/App.css');
 
 import React from 'react';
-import MyLayout from './Layout.jsx'
+import Home from '../page/Home.jsx'
 
 
 class AppComponent extends React.Component {
   render() {
     return (
-      <MyLayout/>
+      <Home/>
     );
   }
 }
