@@ -18,7 +18,7 @@ class Root extends Component{
     }
   }
   componentDidMount(){
-    window.addEventListener('scroll',this.handleScrollGoTop)
+    window.addEventListener('scroll',this.handleScrollGoTop.bind(this))
   }
   handleScrollGoTop(){
     if(document.body.scrollTop > 200){

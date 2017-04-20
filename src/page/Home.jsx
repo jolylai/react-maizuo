@@ -5,7 +5,9 @@ import { Link } from 'react-router'
 import { connect } from 'react-redux'
 import { bindActionCreators }  from 'redux'
 import * as actions from '../redux/actions/home'
+//import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
+import '../styles/home.sass'
 let _key = 0;
 
 class Home extends Component{
@@ -47,8 +49,9 @@ class Home extends Component{
     return(
       <div id="home">
         <div className="banner">
-          <ReactSwipe className="banner-swipe" swipeOption={{autoplay: 3000,autoHeight: true}}/>
-          {bannerStr}
+          <ReactSwipe className="banner-swipe" swipeOptions={{auto:3000,autoHeight:true}}>
+            {bannerStr}
+          </ReactSwipe>
         </div>
         { nowplayStr }
         { comingStr }

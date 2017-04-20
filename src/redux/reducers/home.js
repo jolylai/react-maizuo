@@ -7,6 +7,7 @@ const initialState = {
 export default function homeState(state = initialState,action){
   switch (action.type){
     case 'HOME_GET_BANNER_LIST':
+      console.log('actondate' +action.data)
           return Object.assign({},state,{
             banner: action.data.billboards
           });

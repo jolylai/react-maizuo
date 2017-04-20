@@ -24,10 +24,12 @@ class Header extends Component{
     const menuFoldType = this.props.isFold ? 'menu-unfold' : 'menu-fold';
     return(
       <Affix id="header">
-        <a className="go-menu"><Icon type={menuFoldType} onClick={this.toggle.bind(this)}/></a>
-        <p className="title">{this.props.title}</p>
-        <a className="go-mine"><Icon type="user"/></a>
-        <a className="go-city">厦门<Icon type="down" /></a>
+        <div className="header-wrapper">
+          <a className="go-menu"><Icon type={menuFoldType} onClick={this.toggle.bind(this)}/></a>
+          <p className="title">{this.props.title}</p>
+          <a className="go-mine"><Icon type="user"/></a>
+          <a className="go-city">厦门<Icon type="down" /></a>
+        </div>
       </Affix>
     )
   }
