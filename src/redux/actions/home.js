@@ -10,10 +10,10 @@ function getBannerList(res){
 
 export function fetchBanner(cb){
   return (dispatch) => {
-    dispatch(utils.loading(true))
+    //dispatch(utils.loading(true));
     api.getBannerList(function(res){
-      dispatch(getBannerList(res))
-      dispatch(utils.loading(false))
+      dispatch(getBannerList(res));
+      //dispatch(utils.loading(false));
       cb()
     })
   }
