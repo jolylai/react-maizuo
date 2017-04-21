@@ -15,9 +15,7 @@ class Home extends Component{
     super(props,context);
   }
   componentDidMount(){
-    this.props.actions.fetchBanner(() => {
-      this.props.fetchNowPlaying()
-    })
+    this.props.actions.fetchBanner()
   }
   renderBanner(){
     //const { banner } = this.props;
@@ -62,7 +60,7 @@ class Home extends Component{
 
 const mapStateToProps = (state) => {
   return {
-    banner:state.homeState.banner,
+    banner:state.homeState.banner
     //nowplay:state.homeState.nowplay,
     //coming:state.homeState.coming
   }
