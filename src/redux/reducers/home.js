@@ -7,9 +7,8 @@ const initialState = {
 export default function homeState(state = initialState,action){
   switch (action.type){
     case 'HOME_GET_BANNER_LIST':
-      console.log('actondate' +action.data)
           return Object.assign({},state,{
-            banner: action.data.billboards
+            banner: action.data
           });
     case 'HOME_GET_NOWPLAYING_LIST':
           return Object.assign({},state,{
