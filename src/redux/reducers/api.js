@@ -23,13 +23,14 @@ export default {
   /**
    * 获取首页热映电影
    */
-  //getNowPlaying: function(cb) {
-  //  fetchJsonp('http://m.maizuo.com/v4/api/' + 'film/now-playing?_t=' + new Date()*1 +'&page=1&count=5')
-  //  .then((res) => {
-  //    res.text()
-  //  })
-  //  .then((data) => {
-  //    console.log(data)
-  //  })
-  //}
+  getNowPlaying: function(cb) {
+    fetchJsonp('https://api.douban.com/v2/movie/in_theaters')
+    .then((res) => {
+      res.json()
+    })
+    .then((data) => {
+      console.log( data)
+      cb(data)
+    })
+  }
 }

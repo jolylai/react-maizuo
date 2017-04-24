@@ -16,17 +16,19 @@ export function fetchBanner(){
   }
 }
 
-//getNowPlaying = (res) => {
-//  return {
-//    type: 'HOME_GET_NOWPLAYING_LIST',
-//    data: res.data
-//  }
-//}
-//
-//export const fetchNowPlaying = () => {
-//  return (dispatch) => {
-//    api.getNowPlaying(function (res){
-//      dispatch(getNowPlaying(res))
-//    })
-//  }
-//}
+
+
+const getNowPlaying = (res) => {
+  return {
+    type: 'HOME_GET_NOWPLAYING_LIST',
+    data: res.data
+  }
+}
+
+export const fetchNowPlaying = () => {
+  return (dispatch) => {
+    api.getNowPlaying(function (res){
+      dispatch(getNowPlaying(res))
+    })
+  }
+}

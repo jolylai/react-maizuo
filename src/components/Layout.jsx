@@ -1,21 +1,26 @@
 import React,{ Component } from 'react'
 import LHeader from './LHeader.jsx'
-import LContent from './LContent.jsx'
 import { Layout } from 'antd'
 import LFooter from './LFooter.jsx'
 import Navigation from './Navigation.jsx'
 
+const { Content } = Layout;
+
+/*
+ * 公共布局
+ */
 class MyLayout extends Component{
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
   }
   render(){
     return (
       <div className="layout-wrapper">
         <Layout>
           <LHeader/>
-          <Navigation/>
-          <LContent/>
+          <Content>
+            {  this.props.children }
+          </Content>
           <LFooter/>
         </Layout>
       </div>
