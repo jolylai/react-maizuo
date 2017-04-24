@@ -1,5 +1,4 @@
 import React,{ Component } from 'react'
-import ReactSwipe from 'react-swipe'
 import NowPlaying from '../components/NowPlaying.jsx'
 import { connect } from 'react-redux'
 import { bindActionCreators }  from 'redux'
@@ -38,7 +37,6 @@ class Home extends Component{
   //正在热播
   renderNowPlaying(){
     const {nowplay} = this.props
-    console.log(nowplay)
     return nowplay;
   }
   render(){

@@ -1,30 +1,40 @@
 import React,{ Component } from 'react'
-import { Pagination } from 'antd';
+import { Pagination,Card } from 'antd';
 
 let _key = 0;
 
 class NowPlaying extends Component{
   constructor(props,context){
     super(props,context)
+    this.state={
+      content:[]
+    }
   }
   componentDidMount(){
-    console.log(this.props.nowplay)
+
   }
   renderNowPlayingContent = (page, pageSize) => {
-    console.log(page+'page'+pageSize)
-    let movies = this.props.nowplay.slice(page,pageSize);
+    let start = ( page-1 ) * pageSize;
+    let movies = this.props.nowplay.slice(start,start+pageSize);
     let item = [];
     for (let movie of movies){
       item.push(
-        <div className="now-playing-content-item" key={++_key}>
-          <img src={movie.images.small}/>
-        </div>
+        <Card className="now-playing-content-item" key={++_key} bodyStyle={{ padding: 10 }}>
+          <div className="movie-cover">
+            <img src={movie.images.large}/>
+          </div>
+          <div className="movie-name">
+            <span>{movie.title}</span>
+            <span>{movie.rating.average}</span>
+          </div>
+        </Card>
       )
     }
-    return item;
+    this.setState({
+      content: item
+    })
   }
   render(){
-    let content = this.renderNowPlayingContent()
     return(
       <div className="now-playing">
         <div className="now-playing-header">
@@ -34,8 +44,8 @@ class NowPlaying extends Component{
           <p>即将上映50部电影<a>更多》</a></p>
         </div>
         <div className="now-playing-content">
-          { content }
-          <Pagination defaultPageSize={ 6 } total={20} onChange={this.renderNowPlayingContent }/>
+          { this.state.content }
+          <Pagination defaultPageSize={ 6 } total={20} onChange={this.renderNowPlayingContent.bind(this) }/>
         </div>
       </div>
     )
