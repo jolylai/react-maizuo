@@ -1,5 +1,5 @@
 import * as utils from './com.js'
-import api from '../reducers/api'
+import api from '../api'
 
 function getBannerList(res){
   return {
@@ -18,10 +18,10 @@ export function fetchBanner(){
 
 
 
-const getNowPlaying = (res) => {
+function getNowPlaying (res){
   return {
     type: 'HOME_GET_NOWPLAYING_LIST',
-    data: res.data
+    data: res.subjects
   }
 }
 

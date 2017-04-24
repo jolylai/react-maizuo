@@ -12,11 +12,11 @@ export default function homeState(state = initialState,action){
           });
     case 'HOME_GET_NOWPLAYING_LIST':
           return Object.assign({},state,{
-            nowplay: action.date.films
+            nowplay: action.data
           });
     case 'HOME_GET_COMINGSOON_LIST':
           return Object.assign({},state,{
-            coming: action.date.films
+            coming: action.data
           });
     default:
           return state;

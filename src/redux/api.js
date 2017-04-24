@@ -26,11 +26,13 @@ export default {
   getNowPlaying: function(cb) {
     fetchJsonp('https://api.douban.com/v2/movie/in_theaters')
     .then((res) => {
-      res.json()
+      return res.json()
     })
     .then((data) => {
-      console.log( data)
       cb(data)
+    })
+    .catch((err) => {
+      console.log(err)
     })
   }
 }

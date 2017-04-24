@@ -34,14 +34,15 @@
 .footer{
   text-align: center;
   height: 150px;
+  width: 1200px;
+  margin: 0 auto;
 }
 .footer h2,.server,.follow{
   display: inline-block;
   float: left;
 }
 .footer h2{
-  font-size: 18px;
-  margin-left: 160px;
+
 }
 .footer .server{
   margin-left: 80px;

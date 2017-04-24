@@ -2,12 +2,21 @@ import React,{ Component } from 'react'
 import ReactSwipe from 'react-swipe'
 import NowPlaying from '../components/NowPlaying.jsx'
 import { connect } from 'react-redux'
+import { bindActionCreators }  from 'redux'
+import * as actions from '../redux/actions/home'
+import { Carousel } from 'antd';
 
 import '../styles/home.sass'
 
 let _key = 0;
 
 class Home extends Component{
+  constructor(props,context){
+    super(props,context)
+  }
+  componentDidMount(){
+      this.props.actions.fetchNowPlaying()
+  }
   renderBanner(){
     let images = [
       'https://pic.maizuo.com/manager/a0b20a55d2278bb625237586f62b18c2.jpg!/quality/60',
@@ -26,22 +35,34 @@ class Home extends Component{
     }
     return banner;
   }
+  //正在热播
   renderNowPlaying(){
-
+    const {nowplay} = this.props
+    console.log(nowplay)
+    return nowplay;
   }
   render(){
     let banner = this.renderBanner();
     let nowPlaying = this.renderNowPlaying();
     return(
       <div id="home">
-        <ReactSwipe className="slick-slide" swipeOptions={{auto: 3000,autoHeight: true}}>
+        <Carousel autoplay>
           { banner }
-        </ReactSwipe>
-        <NowPlaying/>
+        </Carousel>
+        <NowPlaying nowplay={ nowPlaying }/>
       </div>
     )
   }
 }
+const mapStateToProps = (state) => {
+  return {
+    nowplay: state.homeState.nowplay
+  }
+}
+const mapDispatchToProps = (dispatch) => {
+  return {
+    actions: bindActionCreators(actions,dispatch)
+  }
+}
 
-
-export default Home;
+export default connect(mapStateToProps,mapDispatchToProps)(Home);
