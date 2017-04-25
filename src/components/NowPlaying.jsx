@@ -5,13 +5,16 @@ let _key = 0;
 
 class NowPlaying extends Component{
   constructor(props,context){
-    super(props,context)
+    super(props,context);
     this.state={
       content:[]
     }
   }
-  componentDidMount(){
-
+  componentWillMount(){
+    let item = this.renderNowPlayingContent(1,6)
+    this.state={
+      content:item
+    }
   }
   renderNowPlayingContent = (page, pageSize) => {
     let start = ( page-1 ) * pageSize;
@@ -19,20 +22,21 @@ class NowPlaying extends Component{
     let item = [];
     for (let movie of movies){
       item.push(
-        <Card className="now-playing-content-item" key={++_key} bodyStyle={{ padding: 10 }}>
-          <div className="movie-cover">
+        <div className="now-playing-content-item" key={++_key}>
+          <div className="movie-img">
             <img src={movie.images.large}/>
           </div>
-          <div className="movie-name">
-            <span>{movie.title}</span>
-            <span>{movie.rating.average}</span>
-          </div>
-        </Card>
+          <p className="movie-name">
+            <span className="title"><a>{movie.title}</a></span>
+            <span className="rating">{movie.rating.average}</span>
+          </p>
+        </div>
       )
     }
     this.setState({
       content: item
     })
+    return item;
   }
   render(){
     return(
@@ -45,7 +49,7 @@ class NowPlaying extends Component{
         </div>
         <div className="now-playing-content">
           { this.state.content }
-          <Pagination defaultPageSize={ 6 } total={20} onChange={this.renderNowPlayingContent.bind(this) }/>
+          <Pagination defaultPageSize={ 5 } total={20} onChange={this.renderNowPlayingContent.bind(this) }/>
         </div>
       </div>
     )

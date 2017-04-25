@@ -1,26 +1,67 @@
 $px: 1rem/20
 #home
   background-color: #fff
-  .now-playing
-    padding-top: 35*$px
+  .content
     width: 1200px
     margin: 0 auto
-    .now-playing-header
-      border-bottom: 1px solid #ccc
-      span
-        font-size: 24px
-      p
-        float: right
-        display: inline-block
-        font-size: 14px
-        color: #b2b2b2
-        margin: 14*$px 0
+    .now-playing
+      padding-top: 35*$px
+      .now-playing-header
+        border-bottom: 1px solid #ccc
+        span
+          font-size: 24px
+        p
+          float: right
+          display: inline-block
+          font-size: 14px
+          color: #b2b2b2
+          margin: 14*$px 0
+          a
+            color: #ff6640
+      .now-playing-content
+        .now-playing-content-item
+          display: inline-block
+          overflow: hidden
+          width: 180px
+          height: 310px
+          margin-right: 26px
+          padding-top: 22px
+          .movie-img
+            img
+              width: 180px
+              height: 250px
+          .movie-name
+            font-size: 14px
+            text-align: center
+            color: #ff6640
+            a
+              color: #000
+    .hot-activity
+      width: 878px
+      display: inline-block
+      .hot-activity-header
+        border-bottom: 1px solid #ccc
+      .hot-activity-content
+        margin-top: 20px
+        li
+          background-image: url("//static.maizuo.com/pc/v1/static/asset/efcbe16b8312f6090f14deb91cf556f4.png")
+          display: inline-block
+          margin-right: 8px
+          text-align: center
+          font-size: 14px
+          a
+            color: #808080
+            line-height: 36px
+    .maizuo-card
+      display: inline-block
+      margin-left: 36px
+      .maizuo-card-header
+        border-bottom: 1px solid #ccc
+      .maizuo-card-content
+        text-align: center
+        margin-top: 20px
+        background-image: url("//static.maizuo.com/pc/v1/static/asset/efcbe16b8312f6090f14deb91cf556f4.png")
+        line-height: 36px
         a
-          color: #ff6640
-    .now-playing-content
-      .now-playing-content-item
-        display: inline-block
-        img
-          width: 180*$px
-          height: 250*$px
+          color: #808080
 
