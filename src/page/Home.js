@@ -10,11 +10,27 @@ import '../styles/home.sass'
 let _key = 0;
 
 class Home extends Component{
-  constructor(props,context){
-    super(props,context)
+  constructor(props){
+    super(props);
+    this.state = {
+      nowplay: []
+    }
   }
   componentDidMount(){
-      this.props.actions.fetchNowPlaying()
+    this.props.actions.fetchNowPlaying()
+    let { nowplay } = this.props;
+    console.log(nowplay)
+    this.setState = {
+      nowplay: nowplay
+    }
+  }
+  shouldComponentUpdate (nextProps, nextState) {
+    console.log(nextProps)
+    if(this.props.nowplay !== nextProps.nowplay){
+      return true;
+    }else{
+      return false;
+    }
   }
   renderBanner(){
     let images = [
@@ -37,8 +53,11 @@ class Home extends Component{
   }
   //正在热播
   renderNowPlaying(){
-    const {nowplay} = this.props
-    return nowplay;
+    const {nowplay} = this.props;
+    this.setState = {
+      nowplay: nowplay
+    }
+    return nowplay
   }
   //热门活动
   renderHotActivity(){
@@ -51,7 +70,7 @@ class Home extends Component{
           <h1>热门活动</h1>
         </div>
         <ul className="hot-activity-content">
-          <li>
+          <li key="1">
             <a href="http://m.maizuo.com/act/active/1024">
               <div>
                 <img src={images[0]}/>
@@ -59,7 +78,7 @@ class Home extends Component{
               <span>卖座商城</span>
             </a>
           </li>
-          <li>
+          <li key="2">
             <a href="http://m.maizuo.com/act/active/1008">
               <div>
                 <img src={images[1]}/>
@@ -67,7 +86,7 @@ class Home extends Component{
               <span>一元看电影</span>
             </a>
           </li>
-          <li>
+          <li key="3">
             <a href="http://cps.maizuo.com/changeUrl.htm?channelId=372&urlId=1505">
               <div>
                 <img src={images[2]}/>
@@ -170,7 +189,7 @@ class Home extends Component{
           { banner }
         </Carousel>
         <div className="content">
-          <NowPlaying nowplay={ nowPlaying }/>
+          <NowPlaying nowplay={ this.props.nowplay }/>
           { hotActivity }
           { maizuoCard }
           { comment }

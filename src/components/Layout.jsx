@@ -4,6 +4,7 @@ import { Layout } from 'antd'
 import LFooter from './LFooter.jsx'
 import Navigation from './Navigation.jsx'
 
+import '../styles/App.css'
 const { Content } = Layout;
 
 /*

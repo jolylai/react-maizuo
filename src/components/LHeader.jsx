@@ -19,10 +19,8 @@ class LHeader extends Component{
             <SubMenu className="city-picker" key="sub1" title={ <span>厦门<Icon type="caret-down" /></span>}>
               <img src="../favicon.ico" alt="downloadApp"/>
             </SubMenu>
-
-              <Menu.Item key='1' className="home page"><Link to='/home'>首页</Link></Menu.Item>
-
-            <Menu.Item key='2' className="file page">影片</Menu.Item>
+            <Menu.Item key='1' className="home page"><Link to='/home'>首页</Link></Menu.Item>
+            <Menu.Item key='2' className="file page"><Link to="/film">影片</Link></Menu.Item>
             <Menu.Item key='3' className="cinema page">影院</Menu.Item>
             <Menu.Item key='4' className="login in">登录</Menu.Item>
             <Menu.Item key='5' className="sign in">注册</Menu.Item>

@@ -22,6 +22,6 @@ react+react-redux+react-router+antd+fetch
   4.小贴士
   你或许要问：为什么不直接把 action creators 绑定到 store 实例上，就像传统 Flux 那样？问题是这样做的话如果开发同构应用，在服务端渲染时就不行了。多数情况下，你 每个请求都需要一个独立的 store 实例，这样你可以为它们提供不同的数据，但是在定义的时候绑定 action creators，你就可以使用一个唯一的 store 实例来对应所有请求了。
   如果你使用 ES5，不能使用 import * as 语法，你可以把 require('./TodoActionCreators') 作为第一个参数传给 bindActionCreators。惟一要考虑的是 actionCreators 的参数全是函数。模块加载系统并不重要。
-
+* display: table-cell;
 ## 构建过程
 * 整体布局

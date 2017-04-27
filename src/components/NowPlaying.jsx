@@ -7,14 +7,11 @@ class NowPlaying extends Component{
   constructor(props,context){
     super(props,context);
     this.state={
-      content:[]
+      content: []
     }
   }
-  componentWillMount(){
-    let item = this.renderNowPlayingContent(1,6)
-    this.state={
-      content:item
-    }
+  componentDidMount(){
+    this.renderNowPlayingContent(0,6)
   }
   renderNowPlayingContent = (page, pageSize) => {
     let start = ( page-1 ) * pageSize;
@@ -36,7 +33,6 @@ class NowPlaying extends Component{
     this.setState({
       content: item
     })
-    return item;
   }
   render(){
     return(
@@ -49,7 +45,7 @@ class NowPlaying extends Component{
         </div>
         <div className="now-playing-content">
           { this.state.content }
-          <Pagination defaultPageSize={ 5 } total={20} onChange={this.renderNowPlayingContent.bind(this) }/>
+          <Pagination defaultPageSize={ 5 } total={20} onChange={ this.renderNowPlayingContent.bind(this) }/>
         </div>
       </div>
     )
