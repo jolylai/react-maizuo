@@ -3,7 +3,6 @@ const initialState = {
 }
 
 const filmState = (state=initialState,action) => {
-  console.log(action.data)
   switch (action.type){
     case "GET_NOW_PLAY_LIST":
           return Object.assign({},state,{
